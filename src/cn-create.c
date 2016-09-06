@@ -8,7 +8,7 @@ extern "C" {
 #include <string.h>
 #include <stdlib.h>
 
-#include "cn-cbor/cn-cbor.h"
+#include "include/cn-cbor/cn-cbor.h"
 #include "cbor.h"
 
 #define INIT_CB(v) \
