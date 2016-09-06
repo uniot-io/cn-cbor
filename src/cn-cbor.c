@@ -13,9 +13,9 @@ extern "C" {
 #include <string.h>
 #include <assert.h>
 #include <math.h>
-#include <arpa/inet.h> // needed for ntohl (e.g.) on Linux
 
-#include "cn-cbor/cn-cbor.h"
+#include "arpa_inet.h" // needed for ntohl (e.g.) on Linux
+#include "include/cn-cbor/cn-cbor.h"
 #include "cbor.h"
 
 #define CN_CBOR_FAIL(code) do { pb->err = code;  goto fail; } while(0)
