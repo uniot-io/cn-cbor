@@ -1,0 +1,19 @@
+{
+    "name": "Cn-CBOR",
+    "keywords": "cbor, binary format, iot",
+    "description": "A constrained node implementation of CBOR in C (Uniot modification)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uniot-io/cn-cbor.git"
+    },
+    "version": "0.1",
+    "license": "MIT",
+    "build": {
+        "includeDir": ".",
+        "srcFilter": "+<*> -<.git/> -<.svn/> -<example/> -<examples/> -<test/> -<tests/> -<cmake/> -<.editorconfig> -<.gitignore> -<.travis.yml> -<*CMakeLists.txt>"
+    },
+    "frameworks": "arduino",
+    "platforms": [
+        "espressif8266"
+    ]
+}
