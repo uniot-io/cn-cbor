@@ -1,6 +1,13 @@
 [![Build Status](https://travis-ci.org/cabo/cn-cbor.png?branch=master)](https://travis-ci.org/cabo/cn-cbor)
 
-# cn-cbor: A constrained node implementation of CBOR in C
+# uniot-cbor
+This repository is part of the [Uniot](https://github.com/uniot-io) project. All necessary changes have been made so that it can exist as a module for the [uniot-core](https://github.com/uniot-io/uniot-core).
+
+Original repository: [cn-cbor](https://github.com/cabo/cn-cbor)
+
+The following is the original readme.
+
+## cn-cbor: A constrained node implementation of CBOR in C
 
 This is a constrained node implementation of [CBOR](http://cbor.io) in
 C that I threw together in 2013, before the publication of
