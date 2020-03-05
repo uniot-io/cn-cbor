@@ -1,10 +1,10 @@
 {
-    "name": "Cn-CBOR",
-    "keywords": "cbor, binary format, iot",
+    "name": "uniot-cbor",
+    "keywords": "uniot, cbor, binary format, iot",
     "description": "A constrained node implementation of CBOR in C (Uniot modification)",
     "repository": {
         "type": "git",
-        "url": "https://github.com/uniot-io/cn-cbor.git"
+        "url": "https://github.com/uniot-io/uniot-cbor.git"
     },
     "version": "0.1",
     "license": "MIT",
