@@ -1,6 +1,10 @@
 #ifndef ARPA_INET_H
 #define ARPA_INET_H
 
+#if defined(ESP8266)
+#include <machine/endian.h>
+#endif
+
 #if BYTE_ORDER == BIG_ENDIAN
 
 #define HTONS(n) (n)
