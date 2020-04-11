@@ -6,7 +6,7 @@
         "type": "git",
         "url": "https://github.com/uniot-io/uniot-cbor.git"
     },
-    "version": "0.1",
+    "version": "0.2.0",
     "license": "MIT",
     "build": {
         "includeDir": ".",
