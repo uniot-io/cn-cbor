@@ -272,6 +272,8 @@ ssize_t cn_cbor_encoder_write(uint8_t *buf,
 			      size_t buf_size,
 			      const cn_cbor *cb);
 
+ssize_t cn_cbor_encoder_calc(const cn_cbor *cb);
+
 /**
  * Create a CBOR map.
  *
