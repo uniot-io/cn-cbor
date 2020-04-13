@@ -35,7 +35,7 @@ typedef struct _write_state
   ssize_t size;
 } cn_write_state;
 
-#define ensure_writable(sz) if ((ws->offset<0) || (ws->offset + (sz) >= ws->size)) { \
+#define ensure_writable(sz) if ((ws->offset<0) || (ws->size - ws->offset < (sz))) { \
   ws->offset = -1; \
   return; \
 }
