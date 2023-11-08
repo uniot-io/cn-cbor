@@ -278,7 +278,8 @@ void cn_cbor_free(cn_cbor* cb CBOR_CONTEXT);
 ssize_t cn_cbor_encoder_write(uint8_t *buf,
 			      size_t buf_offset,
 			      size_t buf_size,
-			      const cn_cbor *cb);
+			      const cn_cbor *cb,
+            bool visit_siblings);
 
 /**
  * Create a CBOR map.

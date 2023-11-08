@@ -187,6 +187,7 @@ static void _write_double(cn_write_state *ws, double val)
 // TODO: make public?
 typedef void (*cn_visit_func)(const cn_cbor *cb, int depth, void *context);
 static void _visit(const cn_cbor *cb,
+                   bool visit_siblings,
                    cn_visit_func visitor,
                    cn_visit_func breaker,
                    void *context)
@@ -208,6 +209,9 @@ visit:
         if (p->next) {
           p = p->next;
         } else {
+          if(!visit_siblings && p->parent == cb) {
+            return;
+          }
           while (p->parent) {
             depth--;
             if (is_indefinite(p->parent)) {
@@ -309,11 +313,12 @@ void _encoder_breaker(const cn_cbor *cb, int depth, void *context)
 ssize_t cn_cbor_encoder_write(uint8_t *buf,
 			      size_t buf_offset,
 			      size_t buf_size,
-			      const cn_cbor *cb)
+			      const cn_cbor *cb,
+            bool visit_siblings)
 {
   cn_write_state ws = { buf, buf_offset, buf_size };
   if (!ws.buf && ws.size <= 0) { ws.size = (ssize_t)(((size_t)-1) / 2); }
-  _visit(cb, _encoder_visitor, _encoder_breaker, &ws);
+  _visit(cb, visit_siblings, _encoder_visitor, _encoder_breaker, &ws);
   if (ws.offset < 0) { return -1; }
   return ws.offset - buf_offset;
 }
