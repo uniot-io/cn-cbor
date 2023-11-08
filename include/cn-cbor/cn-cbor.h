@@ -428,6 +428,8 @@ bool cn_cbor_array_append(cn_cbor* cb_array,
                           cn_cbor* cb_value,
                           cn_cbor_errback *errp);
 
+bool cn_cbor_data_update(cn_cbor *cb, const uint8_t *data, int len);
+
 bool cn_cbor_string_update(cn_cbor *cb, const char *data);
 
 bool cn_cbor_int_update(cn_cbor *cb, int64_t value);

@@ -12,6 +12,20 @@ extern "C"
 #include "include/cn-cbor/cn-cbor.h"
 #include "cbor.h"
 
+bool cn_cbor_data_update(cn_cbor *cb, const uint8_t *data, int len)
+{
+   if (cb->type == CN_CBOR_BYTES)
+    if (cb->length == len)
+      if (memcmp(data, cb->v.bytes, len) == 0)
+        return false;
+
+  cb->type = CN_CBOR_BYTES;
+  cb->length = len;
+  cb->v.bytes = data;
+
+  return true;
+}
+
 bool cn_cbor_string_update(cn_cbor *cb, const char *data)
 {
   size_t new_length = strlen(data);
