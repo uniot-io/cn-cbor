@@ -16,6 +16,19 @@ extern "C" {
   (v) = CN_CALLOC_CONTEXT(); \
   if (!(v)) { if (errp) {errp->err = CN_CBOR_ERR_OUT_OF_MEMORY;} return NULL; }
 
+cn_cbor* cn_cbor_tag_create(int tag, cn_cbor* child, CBOR_CONTEXT_COMMA cn_cbor_errback* errp)
+{
+	cn_cbor* ret;
+	INIT_CB(ret);
+
+	ret->type = CN_CBOR_TAG;
+	ret->v.sint = tag;
+	ret->first_child = child;
+	child->parent = ret;
+
+	return ret;
+}
+
 cn_cbor* cn_cbor_map_create(CBOR_CONTEXT_COMMA cn_cbor_errback *errp)
 {
   cn_cbor* ret;

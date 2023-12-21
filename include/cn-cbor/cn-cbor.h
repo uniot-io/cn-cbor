@@ -282,6 +282,17 @@ ssize_t cn_cbor_encoder_write(uint8_t *buf,
             bool visit_siblings);
 
 /**
+ * Tag a CBOR object
+ *
+ * @param[in]   tag          Tag to be added
+ * @param[in]   child        child data to this object
+ * @param[in]   CBOR_CONTEXT Allocation context (only if USE_CBOR_CONTEXT is defined)
+ * @param[in]   perr         Error, if NULL is returned
+ * @return                   The created object, or NULL on error
+ */
+cn_cbor* cn_cbor_tag_create(int tag, cn_cbor* child, CBOR_CONTEXT_COMMA cn_cbor_errback* perr);
+
+/**
  * Create a CBOR map.
  *
  * @param[in]   CBOR_CONTEXT Allocation context (only if USE_CBOR_CONTEXT is defined)
